@@ -852,3 +852,20 @@ projects:
       - https://github.com/luckyframework/lucky
     priority: 49
     notes: "Crystal shard version"
+
+  # Arch Linux PKGBUILD
+  - type: Arch
+    subtype: PKGBUILD
+    file: PKGBUILD
+    regex:
+      - '^\s*pkgver\s*=\s*["'']?([0-9A-Za-z._+~]+)["'']?\s*(?:#.*)?$'
+    samples:
+      - https://gitlab.archlinux.org/archlinux/packaging/packages/pacman
+    priority: 50
+    notes: "Extracts static pkgver from Arch Linux PKGBUILD"
+    supports_dynamic_versioning: true
+    dynamic_version_indicators:
+      - field: "pkgver"
+        contains:
+          - "pkgver()"
+    fallback_strategy: "git-tags"
