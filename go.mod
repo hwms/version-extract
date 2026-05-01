@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-FileCopyrightText: 2025 The Linux Foundation
 
-module github.com/lfreleng-actions/version-extract-action
+module github.com/hwms/version-extract
 
 go 1.24
 

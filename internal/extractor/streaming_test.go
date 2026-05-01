@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/lfreleng-actions/version-extract-action/internal/config"
+	"github.com/hwms/version-extract/internal/config"
 )
 
 // TestStreamingMemoryEfficiency verifies that the streaming approach

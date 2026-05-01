@@ -12,8 +12,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/lfreleng-actions/version-extract-action/internal/config"
-	"github.com/lfreleng-actions/version-extract-action/internal/extractor"
+	"github.com/hwms/version-extract/internal/config"
+	"github.com/hwms/version-extract/internal/extractor"
 )
 
 var (

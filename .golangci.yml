@@ -39,7 +39,7 @@ linters-settings:
     simplify: true
 
   goimports:
-    local-prefixes: github.com/lfreleng-actions/version-extract-action
+    local-prefixes: github.com/hwms/version-extract
 
   golint:
     min-confidence: 0.8
@@ -113,7 +113,7 @@ linters-settings:
       - HACK
 
   gci:
-    local-prefixes: github.com/lfreleng-actions/version-extract-action
+    local-prefixes: github.com/hwms/version-extract
 
 linters:
   enable:

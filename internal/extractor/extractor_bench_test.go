@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/lfreleng-actions/version-extract-action/internal/config"
+	"github.com/hwms/version-extract/internal/config"
 )
 
 // BenchmarkExtractVersion benchmarks the main ExtractVersion function

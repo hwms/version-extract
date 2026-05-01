@@ -28,7 +28,7 @@ either plain text or JSON, with pretty and minimised JSON formatting options.
 steps:
   - name: "Extract Project Version"
     id: version-extract
-    uses: lfreleng-actions/version-extract-action@main
+    uses: hwms/version-extract@main
     with:
       path: "."
       format: "json"
