@@ -28,6 +28,9 @@ const (
 	simplePattern = `^[0-9]+(\.[0-9]+){0,3}$`
 	// Date-based versions (CalVer)
 	datePattern = `^[0-9]{4}(\.[0-9]{2})*$`
+	// Arch Linux pkgver-style versions, including common VCS pkgver values.
+	// Examples: 0.9.39.r1309.gf111819, r155.083ffa8, 1.0_git20240501
+	archPkgverPattern = `^[0-9A-Za-z][0-9A-Za-z._+~]*$`
 )
 
 // File processing limits
@@ -639,6 +642,12 @@ func (e *VersionExtractor) isValidVersion(version string) bool {
 
 	// Validate against date-based version pattern (CalVer)
 	matched, _ = regexp.MatchString(datePattern, version)
+	if matched {
+		return true
+	}
+
+	// Validate against Arch Linux pkgver-style versions
+	matched, _ = regexp.MatchString(archPkgverPattern, version)
 	return matched
 }
 
