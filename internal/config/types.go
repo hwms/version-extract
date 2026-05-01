@@ -147,7 +147,19 @@ func sortProjectsByPriority(config *Config) {
 
 // GetDefaultConfigPath returns the default configuration file path
 func GetDefaultConfigPath() string {
-	return filepath.Join("configs", "default-patterns.yaml")
+	localConfig := filepath.Join("configs", "default-patterns.yaml")
+	if _, err := os.Stat(localConfig); err == nil {
+		return localConfig
+	}
+
+	if configDir, err := os.UserConfigDir(); err == nil {
+		userConfig := filepath.Join(configDir, "version-extract", "default-patterns.yaml")
+		if _, err := os.Stat(userConfig); err == nil {
+			return userConfig
+		}
+	}
+
+	return localConfig
 }
 
 // GetProjectByType finds a project configuration by type and subtype
